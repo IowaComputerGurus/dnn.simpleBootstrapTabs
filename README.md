@@ -7,3 +7,7 @@ A simple module to allow management of Tabbed content using bootstrap styles
 ## Minimum DNN Version
 
 Current releases support DNN 7.0.0 and later
+
+## Other Requirements
+
+Your skin must include Bootstrap references
