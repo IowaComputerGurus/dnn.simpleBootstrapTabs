@@ -1,0 +1,92 @@
+<dotnetnuke type="Package" version="5.0">
+  <packages>
+    <package name="ICG.Modules.SimpleBootstrapTabs" type="Module" version="01.00.00">
+      <friendlyName>Simple Bootstrap Tabs</friendlyName>
+      <description>A simple tab management module to be used for those with Bootstrap enabled skins</description>
+      <iconFile />
+      <owner>
+        <name>IowaComputerGurus Inc.</name>
+        <organization>IowaComputerGurus Inc.</organization>
+        <url>http://www.iowacomputergurus.com</url>
+        <email>webmaster@iowacomputergurus.com</email>
+      </owner>
+      <license src="ManifestAssets\License.txt"></license>
+      <releaseNotes src="ManifestAssets\ReleaseNotes.txt"></releaseNotes>
+      <dependencies>
+        <dependency type="CoreVersion">07.00.00</dependency>
+      </dependencies>
+      <components>
+        <component type="Script">
+          <scripts>
+            <basePath>DesktopModules\ICG\SimpleBootstrapTabs</basePath>
+            <script type="Install">
+              <path>SqlDataProviderFiles</path>
+              <name>00.00.01.SqlDataProvider</name>
+              <version>00.00.01</version>
+            </script>
+            <script type="UnInstall">
+              <path>SqlDataProviderFiles</path>
+              <name>Uninstall.SqlDataProvider</name>
+              <version>00.00.01</version>
+            </script>
+          </scripts>
+        </component>
+
+        <component type="ResourceFile">
+          <resourceFiles>
+            <basePath>DesktopModules/ICG/SimpleBootstrapTabs</basePath>
+            <resourceFile>
+              <name>Resources.zip</name>
+            </resourceFile>
+          </resourceFiles>
+        </component>
+
+        <component type="Module">
+          <desktopModule>
+            <moduleName>ICG.Modules.SimpleBootstrapTabs</moduleName>
+            <foldername>ICG/SimpleBootstrapTabs</foldername>
+            <supportedFeatures />
+            <moduleDefinitions>
+              <moduleDefinition>
+                <friendlyName>Simple Bootstrap Tabs</friendlyName>
+                <defaultCacheTime>0</defaultCacheTime>
+                <moduleControls>
+                  <moduleControl>
+                    <controlKey />
+                    <controlSrc>DesktopModules/ICG/SimpleBootstrapTabs/View.ascx</controlSrc>
+                    <supportsPartialRendering>False</supportsPartialRendering>
+                    <controlTitle />
+                    <controlType>View</controlType>
+                    <iconFile />
+                    <helpUrl />
+                    <viewOrder>0</viewOrder>
+                  </moduleControl>
+
+                  <moduleControl>
+                    <controlKey>EditContent</controlKey>
+                    <controlSrc>DesktopModules/ICG/SimpleBootstrapTabs/Modals/EditContent.ascx</controlSrc>
+                    <supportsPartialRendering>False</supportsPartialRendering>
+                    <supportsPopUps>True</supportsPopUps>
+                    <controlTitle>Edit Tab Content</controlTitle>
+                    <controlType>Edit</controlType>
+                    <iconFile />
+                    <helpUrl />
+                    <viewOrder>0</viewOrder>
+                  </moduleControl>
+                </moduleControls>
+              </moduleDefinition>
+            </moduleDefinitions>
+          </desktopModule>
+        </component>
+        <component type="Assembly">
+          <assemblies>
+            <basePath>bin</basePath>
+            <assembly>
+              <name>ICG.Modules.SimpleBootstrapTabs.dll</name>
+            </assembly>
+          </assemblies>
+        </component>
+      </components>
+    </package>
+  </packages>
+</dotnetnuke>

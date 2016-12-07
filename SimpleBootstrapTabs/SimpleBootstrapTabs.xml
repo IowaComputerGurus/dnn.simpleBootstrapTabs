@@ -1,0 +1,237 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ICG.Modules.SimpleBootstrapTabs</name>
+    </assembly>
+    <members>
+        <member name="T:ICG.Modules.SimpleBootstrapTabs.Components.Models.TabContent">
+            <summary>
+                Represents the content of a single tab
+            </summary>
+        </member>
+        <member name="P:ICG.Modules.SimpleBootstrapTabs.Components.Models.TabContent.TabContentId">
+            <summary>
+                Gets or sets the tab content identifier.
+            </summary>
+            <value>The tab content identifier.</value>
+        </member>
+        <member name="P:ICG.Modules.SimpleBootstrapTabs.Components.Models.TabContent.ModuleId">
+            <summary>
+                Gets or sets the module identifier.
+            </summary>
+            <value>The module identifier.</value>
+        </member>
+        <member name="P:ICG.Modules.SimpleBootstrapTabs.Components.Models.TabContent.TabTitle">
+            <summary>
+                Gets or sets the tab title.
+            </summary>
+            <value>The tab title.</value>
+        </member>
+        <member name="P:ICG.Modules.SimpleBootstrapTabs.Components.Models.TabContent.TabContents">
+            <summary>
+                Gets or sets the tab contents.
+            </summary>
+            <value>The tab contents.</value>
+        </member>
+        <member name="P:ICG.Modules.SimpleBootstrapTabs.Components.Models.TabContent.SortOrder">
+            <summary>
+                Gets or sets the sort order.
+            </summary>
+            <value>The sort order.</value>
+        </member>
+        <member name="P:ICG.Modules.SimpleBootstrapTabs.Components.Models.TabContent.TabBootstrapId">
+            <summary>
+                Identifier to be used for the div id within the bootstrap implementation
+            </summary>
+            <value>icg_bst_(ModuleId)_(ContentId)</value>
+        </member>
+        <member name="T:ICG.Modules.SimpleBootstrapTabs.Components.Repositories.TabContentRepository">
+            <summary>
+                Repository class for tab content interaction
+            </summary>
+        </member>
+        <member name="M:ICG.Modules.SimpleBootstrapTabs.Components.Repositories.TabContentRepository.GetModuleTabContents(System.Int32)">
+            <summary>
+                Gets the module tab contents.
+            </summary>
+            <param name="moduleId">The module identifier.</param>
+            <returns>List&lt;TabContent&gt;.</returns>
+        </member>
+        <member name="M:ICG.Modules.SimpleBootstrapTabs.Components.Repositories.TabContentRepository.GetTabContentByTabContentId(System.Int32,System.Int32)">
+            <summary>
+                Gets the tab content by tab content identifier.
+            </summary>
+            <param name="moduleId">The module identifier.</param>
+            <param name="tabContentId">The tab content identifier.</param>
+            <returns>TabContent.</returns>
+        </member>
+        <member name="M:ICG.Modules.SimpleBootstrapTabs.Components.Repositories.TabContentRepository.DeleteTabContent(System.Int32,System.Int32)">
+            <summary>
+                Deletes the content of the tab.
+            </summary>
+            <param name="moduleId">The module identifier.</param>
+            <param name="tabContentId">The tab content identifier.</param>
+        </member>
+        <member name="M:ICG.Modules.SimpleBootstrapTabs.Components.Repositories.TabContentRepository.SaveTabContent(ICG.Modules.SimpleBootstrapTabs.Components.Models.TabContent)">
+            <summary>
+                Saves the content of the tab.
+            </summary>
+            <param name="toSave">To save.</param>
+        </member>
+        <member name="T:ICG.Modules.SimpleBootstrapTabs.Modals.EditContent">
+            <summary>
+                UI control for editing content within the tabs
+            </summary>
+        </member>
+        <member name="P:ICG.Modules.SimpleBootstrapTabs.Modals.EditContent.TabContentId">
+            <summary>
+                Gets the tab content identifier.
+            </summary>
+            <value>The tab content identifier.</value>
+        </member>
+        <member name="F:ICG.Modules.SimpleBootstrapTabs.Modals.EditContent.txtTabContent">
+            <summary>
+                Text editor UI control for tab content
+            </summary>
+            <remarks>
+                DO NOT REMOVE: Needed for Visual Studio editor integration
+            </remarks>
+        </member>
+        <member name="M:ICG.Modules.SimpleBootstrapTabs.Modals.EditContent.Page_Load(System.Object,System.EventArgs)">
+            <summary>
+                Page_s the load.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:System.EventArgs" /> instance containing the event data.</param>
+        </member>
+        <member name="M:ICG.Modules.SimpleBootstrapTabs.Modals.EditContent.btnCancel_Click(System.Object,System.EventArgs)">
+            <summary>
+                BTNs the cancel_ click.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:System.EventArgs" /> instance containing the event data.</param>
+        </member>
+        <member name="M:ICG.Modules.SimpleBootstrapTabs.Modals.EditContent.btnDelete_Click(System.Object,System.EventArgs)">
+            <summary>
+                BTNs the delete_ click.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:System.EventArgs" /> instance containing the event data.</param>
+        </member>
+        <member name="M:ICG.Modules.SimpleBootstrapTabs.Modals.EditContent.btnSave_Click(System.Object,System.EventArgs)">
+            <summary>
+                BTNs the save_ click.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:System.EventArgs" /> instance containing the event data.</param>
+        </member>
+        <member name="F:ICG.Modules.SimpleBootstrapTabs.Modals.EditContent.lblTabTitle">
+            <summary>
+            lblTabTitle control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:ICG.Modules.SimpleBootstrapTabs.Modals.EditContent.txtTabTitle">
+            <summary>
+            txtTabTitle control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:ICG.Modules.SimpleBootstrapTabs.Modals.EditContent.TabTitleRequired">
+            <summary>
+            TabTitleRequired control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:ICG.Modules.SimpleBootstrapTabs.Modals.EditContent.lblTabContent">
+            <summary>
+            lblTabContent control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:ICG.Modules.SimpleBootstrapTabs.Modals.EditContent.lblSortOrder">
+            <summary>
+            lblSortOrder control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:ICG.Modules.SimpleBootstrapTabs.Modals.EditContent.txtSortOrder">
+            <summary>
+            txtSortOrder control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:ICG.Modules.SimpleBootstrapTabs.Modals.EditContent.SortOrderFormat">
+            <summary>
+            SortOrderFormat control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:ICG.Modules.SimpleBootstrapTabs.Modals.EditContent.btnSave">
+            <summary>
+            btnSave control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:ICG.Modules.SimpleBootstrapTabs.Modals.EditContent.liDelete">
+            <summary>
+            liDelete control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:ICG.Modules.SimpleBootstrapTabs.Modals.EditContent.btnDelete">
+            <summary>
+            btnDelete control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:ICG.Modules.SimpleBootstrapTabs.Modals.EditContent.btnCancel">
+            <summary>
+            btnCancel control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:ICG.Modules.SimpleBootstrapTabs.View.litContent">
+            <summary>
+            litContent control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+    </members>
+</doc>

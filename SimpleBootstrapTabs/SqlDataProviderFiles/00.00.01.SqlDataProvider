@@ -1,0 +1,76 @@
+CREATE TABLE {databaseOwner}[{objectQualifier}ICG_BST_TabContent] 
+(
+	TabContentId INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+	ModuleId INT,
+	TabTitle NVARCHAR(MAX),
+	TabContents NVARCHAR(MAX),
+	SortOrder INT
+)
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}ICG_BST_TabContentSelectByModuleId]
+	@ModuleId INT
+AS
+SELECT
+	TabContentId,
+	ModuleId,
+	TabTitle,
+	TabContents,
+	SortOrder
+FROM {databaseOwner}[{objectQualifier}ICG_BST_TabContent] 
+WHERE ModuleId = @ModuleId
+ORDER BY SortOrder, TabTitle
+GO
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}ICG_BST_TabContentSelectByModuleIdAndContentId]
+	@ModuleId INT,
+	@TabContentId INT
+AS
+SELECT
+	TabContentId,
+	ModuleId,
+	TabTitle,
+	TabContents,
+	SortOrder
+FROM {databaseOwner}[{objectQualifier}ICG_BST_TabContent] 
+WHERE ModuleId = @ModuleId
+	AND TabContentId = @TabContentId
+ORDER BY SortOrder, TabTitle
+GO
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}ICG_BST_TabContentDelete]
+	@ModuleId INT,
+	@TabContentId INT
+AS
+DELETE FROM {databaseOwner}[{objectQualifier}ICG_BST_TabContent] 
+WHERE ModuleId = @ModuleId
+	AND TabContentId = @TabContentId
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}ICG_BST_TabContentSave]
+	@ModuleId INT,
+	@TabContentId INT,
+	@TabTitle NVARCHAR(MAX),
+	@TabContents NVARCHAR(MAX),
+	@SortOrder INT
+AS
+IF(@TabContentId > 0)
+BEGIN
+	UPDATE {databaseOwner}[{objectQualifier}ICG_BST_TabContent] 
+	SET TabTitle = @TabTitle,
+		TabContents = @TabContents,
+		SortOrder = @SortOrder
+	WHERE ModuleId = @ModuleId
+		AND TabContentId = @TabContentId
+END
+ELSE
+BEGIN
+	INSERT INTO {databaseOwner}[{objectQualifier}ICG_BST_TabContent] 
+		(ModuleId, TabTitle, TabContents, SortOrder)
+	VALUES
+		(@ModuleId, @TabTitle, @TabContents, @SortOrder)
+END
+GO
+
