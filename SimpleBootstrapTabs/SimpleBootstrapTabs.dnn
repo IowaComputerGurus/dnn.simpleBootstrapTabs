@@ -3,7 +3,7 @@
     <package name="ICG.Modules.SimpleBootstrapTabs" type="Module" version="01.00.00">
       <friendlyName>Simple Bootstrap Tabs</friendlyName>
       <description>A simple tab management module to be used for those with Bootstrap enabled skins</description>
-      <iconFile />
+      <iconFile src="DesktopModules/ICG/SimpleBootstrapTabs/ManifestAssets/SBT-logo.jpg" />
       <owner>
         <name>IowaComputerGurus Inc.</name>
         <organization>IowaComputerGurus Inc.</organization>
