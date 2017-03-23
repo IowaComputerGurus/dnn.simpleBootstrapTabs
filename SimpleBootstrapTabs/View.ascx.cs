@@ -4,6 +4,7 @@ using DotNetNuke.Entities.Modules;
 using DotNetNuke.Entities.Modules.Actions;
 using DotNetNuke.Security;
 using DotNetNuke.Services.Cache;
+using DotNetNuke.UI.Skins.Controls;
 using ICG.Modules.SimpleBootstrapTabs.Components.Repositories;
 
 namespace ICG.Modules.SimpleBootstrapTabs
@@ -41,9 +42,9 @@ namespace ICG.Modules.SimpleBootstrapTabs
             {
                 var editLink = string.Empty;
 
-                if (IsEditable)
+                if (ModuleContext.IsEditable)
                 {
-                    editLink = "<p><a href=\"" + ModuleContext.EditUrl("tci", "-1", "EditContent") + "\">Edit Tab</a></p>";
+                    editLink = "<p><a href=\"" + ModuleContext.EditUrl("tci", "-1", "EditContent") + "\" class=\"btn btn-primary\">Edit Tab</a></p>";
                 }
 
                 //Check for cached content
@@ -63,7 +64,8 @@ namespace ICG.Modules.SimpleBootstrapTabs
                         foreach (var item in items)
                         {
                             tabContentBuilder.AppendFormat(TabContentTemplate, item.TabBootstrapId, item.TabContents,
-                                isFirstItem ? " active" : string.Empty, editLink.Replace("-1", item.TabContentId.ToString()));
+                                isFirstItem ? " active" : string.Empty,
+                                editLink.Replace("-1", item.TabContentId.ToString()));
                             tabSelectorBuilder.AppendFormat(TabSelectorTemplate, item.TabBootstrapId, item.TabTitle,
                                 isFirstItem ? " class=\"active\"" : string.Empty);
                             isFirstItem = false;
@@ -79,8 +81,13 @@ namespace ICG.Modules.SimpleBootstrapTabs
                         builder.Append("</div>");
                         builder.Append("</div>");
                         litContent.Text = builder.ToString();
-                        if(!IsEditable)
+                        if (!IsEditable)
                             CachingProvider.Instance().Insert("ICG_BST_" + ModuleId, litContent.Text);
+                    }
+                    else
+                    {
+                        DotNetNuke.UI.Skins.Skin.AddModuleMessage(this, LocalizeString("NoItems"),
+                            ModuleMessage.ModuleMessageType.BlueInfo);
                     }
                 }
             }

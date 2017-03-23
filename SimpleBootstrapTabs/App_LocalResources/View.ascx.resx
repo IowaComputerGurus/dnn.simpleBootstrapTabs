@@ -120,4 +120,7 @@
   <data name="AddTab.Text" xml:space="preserve">
     <value>Add New Tab</value>
   </data>
+  <data name="NoItems.Text" xml:space="preserve">
+    <value>No tabs have been defined, use the "Add New Tab" action to add your first tab.</value>
+  </data>
 </root>
