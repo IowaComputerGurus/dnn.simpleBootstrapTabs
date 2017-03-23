@@ -1,3 +1,6 @@
-﻿<h3>Version 01.00.00</h3>
+﻿<h3>Version 01.01.00</h3>
+<p>Enhancement release, focusing on the usability and consistency in user interface.</p>
+
+<h3>Version 01.00.00</h3>
 
 <p>Initial Release.</p>

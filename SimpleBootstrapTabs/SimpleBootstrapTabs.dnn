@@ -1,6 +1,6 @@
 <dotnetnuke type="Package" version="5.0">
   <packages>
-    <package name="ICG.Modules.SimpleBootstrapTabs" type="Module" version="01.00.00">
+    <package name="ICG.Modules.SimpleBootstrapTabs" type="Module" version="01.01.00">
       <friendlyName>Simple Bootstrap Tabs</friendlyName>
       <description>A simple tab management module to be used for those with Bootstrap enabled skins</description>
       <iconFile src="DesktopModules/ICG/SimpleBootstrapTabs/ManifestAssets/SBT-logo.jpg" />
