@@ -1,6 +1,6 @@
 # DNN Simple Bootstrap Tabs
 
-[![Build status](https://ci.appveyor.com/api/projects/status/p5cagu3hd5coy523?svg=true)](https://ci.appveyor.com/project/IowaComputerGurus/dnn-simplebootstraptabs)
+[![Build status](https://iowacomputergurus.visualstudio.com/ICG%20Open%20Source/_apis/build/status/DNN%20Simple%20Bootstrap%20Tabs)](https://iowacomputergurus.visualstudio.com/ICG%20Open%20Source/_build/latest?definitionId=0)
 
 A simple module to allow management of Tabbed content using bootstrap styles
 
